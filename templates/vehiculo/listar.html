@@ -1,0 +1,32 @@
+<h1>Listado de vehículos</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Serial Carrocería</th>
+            <th>Serial Motor</th>
+            <th>Categoría</th>
+            <th>Precio</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for vehiculo in vehiculos %}
+        <tr>
+            <td>{{ vehiculo.marca }}</td>
+            <td>{{ vehiculo.modelo }}</td>
+            <td>{{ vehiculo.serial_carroceria }}</td>
+            <td>{{ vehiculo.serial_motor }}</td>
+            <td>{{ vehiculo.categoria }}</td>
+            <td>{{ vehiculo.precio }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<h1>Agregar vehículo</h1>
+<form method="post">
+    {% csrf_token %}
+    <!-- Aquí se incluirían los campos del formulario -->
+    <button type="submit">Guardar</button>
+</form>
